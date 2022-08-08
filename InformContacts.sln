@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InformContacts", "InformContacts\InformContacts.csproj", "{18155F0B-FD54-4408-90D5-55A62AC77750}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MockDatabase", "MockDatabase\MockDatabase.sqlproj", "{3476D441-C772-4295-8B44-257DC893E9D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18155F0B-FD54-4408-90D5-55A62AC77750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18155F0B-FD54-4408-90D5-55A62AC77750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18155F0B-FD54-4408-90D5-55A62AC77750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18155F0B-FD54-4408-90D5-55A62AC77750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3476D441-C772-4295-8B44-257DC893E9D0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25777117-90B7-4042-BB1B-3C840E999364}
+	EndGlobalSection
+EndGlobal
