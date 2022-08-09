@@ -21,6 +21,7 @@
             <th>
                 Phone Number
             </th>
+            <th></th>
 		</tr>
 	</thead>
     <tbody>
@@ -41,6 +42,9 @@
                 
                     <td style="width: 166px; text-align: center;">
                         @contact.PhoneNumber 
+                    </td>
+                    <td style="width: 166px; text-align: center;">
+                        <a asp-controller="Home" asp-action="EditContact" asp-route-id="@contact.ContactId">Edit</a>
                     </td>
                 </tr>
             }

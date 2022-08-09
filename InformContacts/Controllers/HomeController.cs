@@ -49,6 +49,36 @@ namespace InformContacts.Controllers
             return View(c);
         }
 
+        //Get the contact info to edit
+        public IActionResult EditContact(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var contact = _dbContext.Contacts.Find(id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            return View(contact);
+        }
+
+        // Action to save the contact passed from the view into database
+        [HttpPost]
+        public IActionResult EditContact(Contact c)
+        {
+            if (ModelState.IsValid)
+            {
+                _dbContext.Contacts.Update(c);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(c);
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
