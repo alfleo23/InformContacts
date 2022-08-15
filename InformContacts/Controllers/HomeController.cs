@@ -6,16 +6,13 @@ namespace InformContacts.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
         private readonly MyDbContext _dbContext;
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-        public HomeController(MyDbContext context)
+        public HomeController(MyDbContext context, ILogger<HomeController> logger)
         {
             _dbContext = context;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -44,6 +41,7 @@ namespace InformContacts.Controllers
             {
                 _dbContext.Contacts.Add(c);
                 _dbContext.SaveChanges();
+                _logger.LogInformation((EventId) 3, "Contact {c.FirstName} {c.LastName} added", c.FirstName, c.LastName);
                 return RedirectToAction("Index");
             }
             return View(c);
@@ -54,12 +52,14 @@ namespace InformContacts.Controllers
         {
             if (id == null || id == 0)
             {
+                _logger.LogError((EventId) 1, "Contact not valid!!");
                 return NotFound();
             }
 
             var contact = _dbContext.Contacts.Find(id);
             if (contact == null)
             {
+                _logger.LogError((EventId) 2, "Contact not found!!");
                 return NotFound();
             }
 
@@ -74,6 +74,7 @@ namespace InformContacts.Controllers
             {
                 _dbContext.Contacts.Update(c);
                 _dbContext.SaveChanges();
+                _logger.LogInformation((EventId) 4, "Contact {c.FirstName} {c.LastName} added", c.FirstName, c.LastName);
                 return RedirectToAction("Index");
             }
             return View(c);
